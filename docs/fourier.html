@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt-BR" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Série de Fourier &#8212; Princípios de Comunicação</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script>let toggleHintShow = 'Clique para expandir.';</script>
+    <script>let toggleHintHide = 'Clique para esconder.';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fourier';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="next" title="Transformada Fourier" href="transformadaFourier.html" />
+    <link rel="prev" title="Sinais e Sistemas" href="sinais.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt-BR"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Princípios de Comunicação</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sinais.html">Sinais e Sistemas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Série de Fourier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformadaFourier.html">Transformada Fourier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagramaDeBode.html">Resposta de Sistemas a Entradas Senoidais e Diagrama de Bode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourierB.html">Aula 2 - Revisão</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/fourier.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Buscar" aria-label="Buscar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Série de Fourier</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Conteúdo </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-da-serie-de-fourier">Exemplo da Série de Fourier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise">Análise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintese">Síntese</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-numerico">Exemplo Numérico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucao-simbolica">Solução Simbólica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucao-usando-a-fft">Solução usando a FFT</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3">Exercício 3</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="serie-de-fourier">
+<h1>Série de Fourier<a class="headerlink" href="#serie-de-fourier" title="Link permanente para este cabeçalho">#</a></h1>
+<section id="definicao">
+<h2>Definição<a class="headerlink" href="#definicao" title="Link permanente para este cabeçalho">#</a></h2>
+<p>A Série de Fourier é uma técnica matemática que permite representar uma função periódica como uma soma infinita de funções senoidais ou funções exponenciais complexas. Ela foi desenvolvida pelo matemático Jean-Baptiste Joseph Fourier no século XIX e tem uma ampla gama de aplicações em física, engenharia e matemática.</p>
+<p>A formulação da Série de Fourier na forma exponencial envolve o uso das funções exponenciais complexas, especificamente a função exponencial imaginária, denotada por <span class="math notranslate nohighlight">\(e^{(j \omega_0 t)}\)</span>, onde <span class="math notranslate nohighlight">\(j\)</span> é representa a unidade imaginária (<span class="math notranslate nohighlight">\(j = \sqrt{-1}\)</span>) e <span class="math notranslate nohighlight">\(\omega_0\)</span> é a frequência angular.</p>
+<p>Considere uma função periódica <span class="math notranslate nohighlight">\(f(t)\)</span> com período <span class="math notranslate nohighlight">\(T_0\)</span>, definida no intervalo <span class="math notranslate nohighlight">\([-T_0/2, T_0/2]\)</span>. A Série de Fourier na forma exponencial é expressa da seguinte maneira:</p>
+<div class="math notranslate nohighlight">
+\[x(t) = \sum_{n=-\infty}^{\infty}D_n e^{(jn \omega_0 t)}\]</div>
+<p>onde os coeficientes complexos de Fourier, <span class="math notranslate nohighlight">\(D_n\)</span>, associados à frequência <span class="math notranslate nohighlight">\(\omega\)</span>, são obtidos por</p>
+<div class="math notranslate nohighlight">
+\[D_n=\frac{1}{T_0}\int_{T_0}x(t)e^{(-jn \omega_0 t)}dt.\]</div>
+<p>A representação da série de Fourier na forma exponencial é interessante pois é capaz de representar funções periódicas de forma mais compacta, em comparação com a forma trigonométrica da Série de Fourier.</p>
+<p>Os coeficientes da Série de Fourier possuem características fundamentais que descrevem a natureza da decomposição harmônica de uma função periódica. Os coeficientes de Fourier são complexos, o que significa que eles possuem uma parte real e uma parte imaginária. Essa função complexa pode ser representada por sua amplitude e fase, na forma polar. Nessa representação, a função complexa é representada pela amplitude (magnitude) de <span class="math notranslate nohighlight">\(|D_n|\)</span>, e pela fase <span class="math notranslate nohighlight">\(\angle(D_n)\)</span>. A amplitude representa a contribuição da componente harmônica na soma total da Série de Fourier, enquanto a fase indica a defasagem relativa da componente harmônica em relação à função original. Cada coeficiente <span class="math notranslate nohighlight">\(D_n\)</span> está associado a uma componente harmônica específica na Série de Fourier. A frequência angular <span class="math notranslate nohighlight">\(\omega\)</span> correspondente à componente harmônica é dada por <span class="math notranslate nohighlight">\(\omega = 2\pi n/T_o\)</span> , onde n é um número inteiro. Quanto maior o valor de n, maior a frequência e o número de oscilações da componente harmônica.</p>
+<p>O estudo da natureza dos coeficientes de Fourier permite compreender como as funções periódicas podem ser decompostas em componentes harmônicas e reconstruídas usando uma combinação dessas componentes. Essa análise é fundamental para a análise de sinais, processamento de sinais, síntese de formas de onda e diversas aplicações científicas e tecnológicas que envolvem fenômenos periódicos.</p>
+</section>
+<section id="exemplo-da-serie-de-fourier">
+<h2>Exemplo da Série de Fourier<a class="headerlink" href="#exemplo-da-serie-de-fourier" title="Link permanente para este cabeçalho">#</a></h2>
+<p>Considere um sinal periódico, definido como um trem de pulsos, variando entre 0 e 1 e com período fundamental <span class="math notranslate nohighlight">\(T_o=2\)</span>. Esse sinal é representado, para cada período <span class="math notranslate nohighlight">\(T_0\)</span>, como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y(t) = \Bigg\{\begin{matrix}1, &amp;t &lt; T_0/2 \\    0, &amp;t \ge T_o/2\end{matrix}\end{split}\]</div>
+<figure class="align-center" id="id1" style="width: 80%">
+<img alt="_images/exemploFourierA.png" src="_images/exemploFourierA.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Onda quadrada com período T=2.</strong></span><a class="headerlink" href="#id1" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="analise">
+<h2>Análise<a class="headerlink" href="#analise" title="Link permanente para este cabeçalho">#</a></h2>
+<p>A série de Fourier pode ser utilizada para a análise de um sinal periódico. Como a série de Fourier permite decompor o sinal periódico em uma soma infinita de componentes harmônicos, que são múltiplos inteiros da frequência fundamental, podemos determinar os coeficientes de Fourier, que serão usados para determinar a amplitude e a fase de cada componente harmônico na série de Fourier do sinal analisado. Para o trem de pulsos que queremos analisar, os coeficientes da série de Fourier podem ser obtidos usando a equação:</p>
+<div class="math notranslate nohighlight">
+\[D_n=\frac{1}{T_0}\int_{T}x(t)e^{(-jn \omega_0 t)}dt.\]</div>
+<p>Considerando o período fundamental como <span class="math notranslate nohighlight">\(T_0=2\)</span>, temos <span class="math notranslate nohighlight">\(\omega_0=2\pi /T_0=\pi\)</span>. Dessa forma, obtemos:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}D_n=&amp;\frac{1}{2}\int_{0}^{2}x(t)e^{(-jn \pi t)}dt,\\D_n=&amp;\frac{1}{2}\int_{0}^{1}1\times e^{(-jn \pi t)}dt+\frac{1}{2}\int_{1}^{2}0\times e^{(-jn \pi t)}dt,\\D_n=&amp;=\frac{1}{2}\int_{0}^{1}e^{(-jn \pi t)}dt.\end{aligned}\end{align} \]</div>
+<p>Os coeficiêntes <span class="math notranslate nohighlight">\(D_n\)</span> são representados pela equação:</p>
+<div class="math notranslate nohighlight">
+\[D_n=\frac{-1}{2jn\pi}(e^{-jn\pi}-1).\]</div>
+<p>Os coeficiêntes da série de Fourier do trem de pulsos podem ser representados na forma polar, como apresentado na figura a seguir.</p>
+<figure class="align-center" id="id2" style="width: 80%">
+<img alt="_images/exemploFourierB.png" src="_images/exemploFourierB.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Coeficientes da série de Fourier para a onda quadrada.</strong></span><a class="headerlink" href="#id2" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sintese">
+<h2>Síntese<a class="headerlink" href="#sintese" title="Link permanente para este cabeçalho">#</a></h2>
+<p>A série de Fourier pode ser usada, também, para a síntese de um sinal a partir de senóides fundamentais. Se utilizarmos os coeficientes <span class="math notranslate nohighlight">\(D_n\)</span> obtidos anteriormente, é possível reconstruir o sinal original, utilizando a equação:</p>
+<div class="math notranslate nohighlight">
+\[x(t) = \sum_{n=-\infty}^{\infty}D_n e^{(jn \omega_0 t)}.\]</div>
+<p>É importante notar que essa equação considera um número infinito de coeficiêntes, dessa forma, se <span class="math notranslate nohighlight">\(D_n\)</span> tiver componentes não nulas ilimitadas, só será possível recontruir perfeitamente o sinal no limite quando <span class="math notranslate nohighlight">\(n\rightarrow\infty\)</span>.</p>
+<figure class="align-center" id="id3" style="width: 80%">
+<img alt="_images/exemploFourierC.png" src="_images/exemploFourierC.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Senóide fundamental, com período T=2, e suas harmônicas.</strong></span><a class="headerlink" href="#id3" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4" style="width: 80%">
+<img alt="_images/exemploFourierD.png" src="_images/exemploFourierD.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Exemplo da construção de uma onda quadrada por meio dos coeficientes da Série de Fourier.</strong></span><a class="headerlink" href="#id4" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+<div class="toggle toggle-hidden docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">T</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="p">((</span><span class="n">t</span> <span class="o">%</span> <span class="n">T</span><span class="p">)</span><span class="o">&lt;=</span><span class="mf">0.5</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">2.2</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="linenos">13</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="linenos">18</span><span class="n">n1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="linenos">19</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">n1</span><span class="p">:</span>
+<span class="linenos">20</span>        <span class="k">if</span> <span class="n">k</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="linenos">21</span>                <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="linenos">22</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">23</span>                <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="o">+</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">24</span>                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">11</span><span class="p">])</span><span class="o">==</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">:</span>
+<span class="linenos">25</span>                        <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">11</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="n">n2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="linenos">28</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">n2</span><span class="p">:</span>
+<span class="linenos">29</span>        <span class="k">if</span> <span class="n">k</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="linenos">30</span>                <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">11</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="linenos">31</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">32</span>                <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">33</span>                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">11</span><span class="p">])</span><span class="o">==</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">:</span>
+<span class="linenos">34</span>                        <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">11</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="n">modulo</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="linenos">37</span><span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+<span class="linenos">38</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="linenos">39</span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">40</span><span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">modulo</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">41</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n$&#39;</span><span class="p">)</span>
+<span class="linenos">42</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|D_n|$&#39;</span><span class="p">)</span>
+<span class="linenos">43</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">44</span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">],[</span><span class="s1">&#39;-10&#39;</span><span class="p">,</span><span class="s1">&#39;-5&#39;</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;10&#39;</span><span class="p">])</span>
+<span class="linenos">45</span>
+<span class="linenos">46</span><span class="n">fase</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="linenos">47</span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">48</span><span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">fase</span><span class="p">,</span> <span class="n">use_line_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#Usar o mod para transformar o angulo de -pi a pi para 0 a 2pi</span>
+<span class="linenos">49</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n$&#39;</span><span class="p">)</span>
+<span class="linenos">50</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\angle D_n$&#39;</span><span class="p">)</span>
+<span class="linenos">51</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">52</span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">],[</span><span class="s1">&#39;-10&#39;</span><span class="p">,</span><span class="s1">&#39;-5&#39;</span><span class="p">,</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;10&#39;</span><span class="p">])</span>
+<span class="linenos">53</span>
+<span class="linenos">54</span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploFourierB.png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">55</span>
+<span class="linenos">56</span><span class="k">def</span> <span class="nf">phi</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="linenos">57</span>        <span class="k">if</span> <span class="n">k</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="linenos">58</span>                <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">59</span>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">T</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+<span class="linenos">60</span>
+<span class="linenos">61</span><span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+<span class="linenos">62</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="linenos">63</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+<span class="linenos">64</span>        <span class="n">xak</span> <span class="o">=</span> <span class="n">phi</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="n">phi</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">k</span><span class="p">)</span>
+<span class="linenos">65</span>        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+<span class="linenos">66</span>        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">xak</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">67</span>        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">2.2</span><span class="o">*</span><span class="n">T</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span>
+<span class="linenos">68</span>        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;n</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="linenos">69</span>        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="linenos">70</span>
+<span class="linenos">71</span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="linenos">72</span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploFourierC.png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">73</span>
+<span class="linenos">74</span><span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+<span class="linenos">75</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="linenos">76</span>
+<span class="linenos">77</span><span class="n">xa</span> <span class="o">=</span> <span class="n">phi</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">78</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos">79</span>        <span class="n">xak</span> <span class="o">=</span> <span class="n">phi</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="n">phi</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">k</span><span class="p">)</span>
+<span class="linenos">80</span>        <span class="n">xa</span> <span class="o">=</span> <span class="n">xa</span> <span class="o">+</span> <span class="n">xak</span>
+<span class="linenos">81</span>        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">82</span>        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">83</span>        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">xa</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">84</span>        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">2.2</span><span class="o">*</span><span class="n">T</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span>
+<span class="linenos">85</span>        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="linenos">86</span>        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="linenos">87</span>
+<span class="linenos">88</span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="linenos">89</span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploFourierD.png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="exemplo-numerico">
+<h2>Exemplo Numérico<a class="headerlink" href="#exemplo-numerico" title="Link permanente para este cabeçalho">#</a></h2>
+<p>Existem algumas formas distintas para obtenção da série de Fourier de um sinal. Os coeficientes podem ser obtidos usando bibliotecas simbólicas, na qual o sinal desejado será representado como uma função simbólica, com os coeficientes sendo obtidos a partir da definição, por meio da resolução simbólica do problema. Uma segunda forma consiste na utilização de outro algoritmo, do qual os coeficientes da série de Fourier podem ser extraídos. Esse algoritmo é o algoritmo FFT (<em>Fast Fourier Transform</em>), que obtém a transformada de Fourier, considerando apenas um período do sinal. A partir dos coeficiêntes da transformada de Fourier, podemos obter os coeficientes da série de Fourier. A relação entre a série de Fourier e a transformada de Fourier é apresentada na aula seguinte, que trata da transformada de Fourier.</p>
+<section id="solucao-simbolica">
+<h3>Solução Simbólica<a class="headerlink" href="#solucao-simbolica" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Podemos obter os coeficientes da série de Fourier de um sinal usando a biblioteca SYMPY, a qual é dedicada à matemática simbólica.</p>
+<div class="toggle toggle-hidden docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">fourier_series</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">plot</span>
+<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">f</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">1</span>
+<span class="linenos"> 7</span><span class="n">s</span> <span class="o">=</span> <span class="n">fourier_series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="linenos"> 8</span><span class="n">s1</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="n">p</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s1</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">p</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploSerieSimbolica1.png&#39;</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">s2</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">13</span><span class="n">p</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">14</span><span class="n">p</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploSerieSimbolica2.png&#39;</span><span class="p">)</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="n">s3</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">17</span><span class="n">p</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s3</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">18</span><span class="n">p</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploSerieSimbolica3.png&#39;</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="n">s5</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">21</span><span class="n">p</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s5</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">22</span><span class="n">p</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploSerieSimbolica5.png&#39;</span><span class="p">)</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="n">s10</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="linenos">25</span><span class="n">p</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s10</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">26</span><span class="n">p</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploSerieSimbolica10.png&#39;</span><span class="p">)</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span><span class="n">s100</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">29</span><span class="n">p</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s100</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="linenos">30</span><span class="n">p</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;source/figures/exemploSerieSimbolica100.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<figure class="align-center" id="id5" style="width: 80%">
+<img alt="_images/exemploSerieSimbolica.png" src="_images/exemploSerieSimbolica.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Exemplo da série de Fourier usando SYMPY.</strong></span><a class="headerlink" href="#id5" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="solucao-usando-a-fft">
+<h3>Solução usando a FFT<a class="headerlink" href="#solucao-usando-a-fft" title="Link permanente para este cabeçalho">#</a></h3>
+<div class="toggle toggle-hidden docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="linenos"> 5</span>        <span class="k">return</span> <span class="p">(</span><span class="n">t</span> <span class="o">%</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">COMPONENTES</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">COMPONENTES</span><span class="p">:</span>
+<span class="linenos">13</span>        <span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+<span class="linenos">14</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+<span class="linenos">15</span>                <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">16</span>                <span class="n">np</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="linenos">17</span>                <span class="n">ifft</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="linenos">18</span>                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ifft</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Reds</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.70</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Primeiras </span><span class="si">{c}</span><span class="s2"> componentes da série de Fourier&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">))</span>
+<span class="linenos">21</span>        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Original dataset&quot;</span><span class="p">)</span>
+<span class="linenos">22</span>        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="linenos">23</span>        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Link permanente para este cabeçalho">#</a></h2>
+<section id="exercicio-1">
+<h3>Exercício 1<a class="headerlink" href="#exercicio-1" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Para os sinais apresentados a seguir, determine a energia:</p>
+<ol class="loweralpha simple">
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</section>
+<section id="exercicio-2">
+<h3>Exercício 2<a class="headerlink" href="#exercicio-2" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Para os sinais apresentados a seguir, determine o período fundamental, a frequência e a potência:</p>
+<div class="toggle toggle-hidden docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">T0</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="p">(</span><span class="n">t</span> <span class="o">%</span> <span class="n">T0</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.2</span><span class="p">,</span><span class="mf">2.2</span><span class="o">*</span><span class="n">T0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="linenos">11</span><span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="linenos">14</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">15</span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="linenos">16</span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;source/figures/exercicioFourier2a.png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<figure class="align-center" id="id6" style="width: 80%">
+<img alt="_images/exercicioFourier2a.png" src="_images/exercicioFourier2a.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Exercício 2a.</strong></span><a class="headerlink" href="#id6" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+<ol class="loweralpha simple" start="2">
+<li></li>
+</ol>
+<div class="toggle toggle-hidden docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="n">T0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+<span class="linenos"> 7</span>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="linenos">13</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">14</span><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="linenos">15</span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;source/figures/exercicioFourier2b.png&#39;</span><span class="p">,</span><span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<figure class="align-center" id="id7" style="width: 80%">
+<img alt="_images/exercicioFourier2b.png" src="_images/exercicioFourier2b.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Exercício 2b.</strong></span><a class="headerlink" href="#id7" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="exercicio-3">
+<h3>Exercício 3<a class="headerlink" href="#exercicio-3" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Para os sinais do exercício 2.a e 2.b, calcule a transformada de Fourier, e mostre graficamente os coeficientes da mesma.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sinais.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Sinais e Sistemas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="transformadaFourier.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Transformada Fourier</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Conteúdo
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-da-serie-de-fourier">Exemplo da Série de Fourier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise">Análise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintese">Síntese</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-numerico">Exemplo Numérico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucao-simbolica">Solução Simbólica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucao-usando-a-fft">Solução usando a FFT</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3">Exercício 3</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Bernardo Barancelli Schwedersky
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Bernardo Barancelli Schwedersky.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
