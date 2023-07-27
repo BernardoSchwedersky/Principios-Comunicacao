@@ -29,6 +29,14 @@ Lista de exercícios selecionados do livro "Lathi, B. P., Sistemas de Comunicaç
 
 4.5-1
 
+5.2-1
+
+5.2-2
+
+5.4-1
+
+5.4-2
+
 
 Modulação em Amplitude
 ======================
@@ -70,10 +78,7 @@ c) Calcule a potência do sinal modulado.
 Exercício 4
 -----------
 
-Para o sinal modulado em amplitude, descrito por :math:`\phi(t)=cos(5t)cos(100t)`, desenhe o diagrama de blocos do processo de demodulação síncrona, determinando os sinais involvidos. Esboce o espectro de frequência dos sinais envolvidos nesse processo de demodulação, e discuta qual interpretação desse processo de demodulação no domínio da frequência.
-
-
-Continua ...
+Para o sinal modulado em amplitude, descrito por :math:`\phi(t)=cos(5t)cos(100t)`, desenhe o diagrama de blocos do processo de demodulação síncrona, determinando os sinais envolvidos. Esboce o espectro de frequência dos sinais envolvidos nesse processo de demodulação, e discuta qual interpretação desse processo de demodulação no domínio da frequência.
 
 
 Modulação em Frequência
