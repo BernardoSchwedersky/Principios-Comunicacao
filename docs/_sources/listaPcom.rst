@@ -1,6 +1,6 @@
-===================
-Lista de Exercícios
-===================
+=====================
+Lista de Exercícios 1
+=====================
 
 Compilado de exercícios sugeridos para auxiliar o estudo na disciplina Princípios de Comunicação. 
 

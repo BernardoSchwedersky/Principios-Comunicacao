@@ -20,3 +20,4 @@ Conteúdo
 
 .. toctree::
 	listaPcom
+	listaPcom2
