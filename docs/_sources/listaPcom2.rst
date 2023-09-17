@@ -48,9 +48,17 @@ Modulação por Pulsos
 Exercício 1
 -----------
 
+Para as mensagens a seguir, determine: qual a frequência de amostragem que respeita o critério de Nyquist; obtenha a sequência de valores amostrados, considerando que o sinal foi amostrado com a frequência de Nyquist; e determine qual o formato do sinal se considerarmos que a mensagem foi transmitida em PAM, PWM e PPM.
 
+a) :math:`cos(t)`
 
+b) :math:`sinc(2\pi t)`
 
+-----------
+Exercício 2
+-----------
+
+Para as mensagens amostradas no exercício 1, realize o processo de quantização considerando que o sistema de transmissão considere mensagens com 4 e 8 bits.
 
 Modulação Digital
 =================

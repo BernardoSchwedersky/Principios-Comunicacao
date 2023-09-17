@@ -282,21 +282,22 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-do-livro">Exercícios do Livro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-por-pulsos">Modulação por Pulsos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-digital">Modulação Digital</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercício 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercício 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3">Exercício 3</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processos-aleatorios">Processos Aleatórios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercício 1</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempenho-de-sistemas-de-comunicacao">Desempenho de Sistemas de Comunicação</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercício 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercício 2</a></li>
 </ul>
 </li>
 </ul>
@@ -335,6 +336,15 @@ document.write(`
 <h2>Modulação por Pulsos<a class="headerlink" href="#modulacao-por-pulsos" title="Link permanente para este cabeçalho">#</a></h2>
 <section id="exercicio-1">
 <h3>Exercício 1<a class="headerlink" href="#exercicio-1" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Para as mensagens a seguir, determine: qual a frequência de amostragem que respeita o critério de Nyquist; obtenha a sequência de valores amostrados, considerando que o sinal foi amostrado com a frequência de Nyquist; e determine qual o formato do sinal se considerarmos que a mensagem foi transmitida em PAM, PWM e PPM.</p>
+<ol class="loweralpha simple">
+<li><p><span class="math notranslate nohighlight">\(cos(t)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(sinc(2\pi t)\)</span></p></li>
+</ol>
+</section>
+<section id="exercicio-2">
+<h3>Exercício 2<a class="headerlink" href="#exercicio-2" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Para as mensagens amostradas no exercício 1, realize o processo de quantização considerando que o sistema de transmissão considere mensagens com 4 e 8 bits.</p>
 </section>
 </section>
 <section id="modulacao-digital">
@@ -343,8 +353,8 @@ document.write(`
 <h3>Exercício 1<a class="headerlink" href="#id1" title="Link permanente para este cabeçalho">#</a></h3>
 <p>O processo de transmissão de um sinal digital é composto por várias etapas, resposnáveis por transformar o sinal. Dentre as principais etapas, destaca-se as codificações de fonte e linha, modulação com portadora, multiplexação e repetição. Desenhe o diagrama de blocos que representa todo o processo de transmissão digital e explique sucintamente a função de cada uma dessas etapas.</p>
 </section>
-<section id="exercicio-2">
-<h3>Exercício 2<a class="headerlink" href="#exercicio-2" title="Link permanente para este cabeçalho">#</a></h3>
+<section id="id2">
+<h3>Exercício 2<a class="headerlink" href="#id2" title="Link permanente para este cabeçalho">#</a></h3>
 <p>Um aluno da disciplina de Princípios de Comunicação está interassado em tentar captar sinais provenientes do espaço. Para isso, hipotéticamente, o aluno direcionou uma antena para a posição estimada do Planeta X, na esperança de captar uma mensagem “alienígena”. Misteriosamente, após uma série de processamentos e filtragens, o aluno conseguiu detectar uma sequência de pulsos que aparentam ser digitais. Essa sequência de pulsos é a seguinte:</p>
 <figure class="align-center" style="width: 100%">
 <a class="reference internal image-reference" href="_images/ExPulsos.png"><img alt="_images/ExPulsos.png" src="_images/ExPulsos.png" style="width: 60%;" /></a>
@@ -358,8 +368,8 @@ document.write(`
 </section>
 <section id="processos-aleatorios">
 <h2>Processos Aleatórios<a class="headerlink" href="#processos-aleatorios" title="Link permanente para este cabeçalho">#</a></h2>
-<section id="id2">
-<h3>Exercício 1<a class="headerlink" href="#id2" title="Link permanente para este cabeçalho">#</a></h3>
+<section id="id3">
+<h3>Exercício 1<a class="headerlink" href="#id3" title="Link permanente para este cabeçalho">#</a></h3>
 <p>Para um processo aleatório definido por <span class="math notranslate nohighlight">\(X(t)=kt\)</span>, em que k é uma variável uniformemente distribuída no intervalo [-1,1]</p>
 <ol class="loweralpha simple">
 <li><p>Esboce as funções amostras (realizações) do processo;</p></li>
@@ -372,8 +382,8 @@ document.write(`
 </section>
 <section id="desempenho-de-sistemas-de-comunicacao">
 <h2>Desempenho de Sistemas de Comunicação<a class="headerlink" href="#desempenho-de-sistemas-de-comunicacao" title="Link permanente para este cabeçalho">#</a></h2>
-<section id="id3">
-<h3>Exercício 1<a class="headerlink" href="#id3" title="Link permanente para este cabeçalho">#</a></h3>
+<section id="id4">
+<h3>Exercício 1<a class="headerlink" href="#id4" title="Link permanente para este cabeçalho">#</a></h3>
 <p>Considerando uma mensagem, modulada em AM-DSC, definida como <span class="math notranslate nohighlight">\(m(t)=A_m cos(2\pi f_m t)\)</span>, determine qual seria:</p>
 <ol class="loweralpha simple">
 <li><p>A SNR do canal quando o fator de modulação é <span class="math notranslate nohighlight">\(\mu=1\)</span>;</p></li>
@@ -382,8 +392,8 @@ document.write(`
 <li><p>A figura de mérito caso a detecção fosse síncrona.</p></li>
 </ol>
 </section>
-<section id="id4">
-<h3>Exercício 2<a class="headerlink" href="#id4" title="Link permanente para este cabeçalho">#</a></h3>
+<section id="id5">
+<h3>Exercício 2<a class="headerlink" href="#id5" title="Link permanente para este cabeçalho">#</a></h3>
 </section>
 </section>
 </section>
@@ -430,21 +440,22 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-do-livro">Exercícios do Livro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-por-pulsos">Modulação por Pulsos</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-digital">Modulação Digital</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercício 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercício 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3">Exercício 3</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processos-aleatorios">Processos Aleatórios</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercício 1</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempenho-de-sistemas-de-comunicacao">Desempenho de Sistemas de Comunicação</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercício 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercício 2</a></li>
 </ul>
 </li>
 </ul>
