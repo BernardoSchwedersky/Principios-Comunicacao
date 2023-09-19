@@ -103,10 +103,9 @@ b) Determine o valor esperado, E[X(t)];
 
 c) Determine a autocorrelação de X(t);
 
-d) Discuta de o processo é aleatório e se é ergódico;
+d) Discuta se o processo é estacionário e se é ergódico;
 
 e) Determine a potência :math:`P_x = E[X(t)^2]`;
-
 
 Desempenho de Sistemas de Comunicação
 =====================================
@@ -124,7 +123,6 @@ b) A SNR do demodulador por deteção de envoltória;
 c) A figura de mérito para o caso AM-DSB com detector de envoltória;
 
 d) A figura de mérito caso a detecção fosse síncrona.
-
 
 -----------
 Exercício 2
