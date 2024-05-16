@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Aula 2 - Revisão &#8212; Princípios de Comunicação</title>
+    <title>Revisão - Apresentação &#8212; Princípios de Comunicação</title>
   
   
   
@@ -53,6 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'fourierB';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Buscar" href="search.html" />
+    <link rel="prev" title="Resposta de Sistemas a Entradas Senoidais e Diagrama de Bode" href="diagramaDeBode.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="pt-BR"/>
   </head>
@@ -129,9 +130,14 @@
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="listaPcom.html">Lista de Exercícios 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="listaPcom2.html">Lista de Exercícios 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sinais.html">Sinais e Sistemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourier.html">Série de Fourier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformadaFourier.html">Transformada Fourier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagramaDeBode.html">Resposta de Sistemas a Entradas Senoidais e Diagrama de Bode</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Revisão - Apresentação</a></li>
 </ul>
 
     </div>
@@ -268,7 +274,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Aula 2 - Revisão</h1>
+    <h1>Revisão - Apresentação</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -329,8 +335,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="aula-2-revisao">
-<h1>Aula 2 - Revisão<a class="headerlink" href="#aula-2-revisao" title="Link permanente para este cabeçalho">#</a></h1>
+  <section id="revisao-apresentacao">
+<h1>Revisão - Apresentação<a class="headerlink" href="#revisao-apresentacao" title="Link permanente para este cabeçalho">#</a></h1>
 <ul class="simple">
 <li><p>[22000274] - Princípios de Comunicação</p></li>
 <li><p>Professor: Bernardo Barancelli Schwedersky, Dr. Eng.</p></li>
@@ -341,6 +347,8 @@ document.write(`
 <li><p>Sinais</p></li>
 <li><p>Série de Fourier</p></li>
 <li><p>Transformada de Fourier</p></li>
+<li><p>Diagrama de Bode</p></li>
+<li><p>Filtragem</p></li>
 </ul>
 </section>
 <section id="sinais">
@@ -687,7 +695,7 @@ X(t)\end{split}\]</div>
 <td><p>Dualidade - Frequência</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\mathcal{F}[x(t)] = X(\omega)\\
-\mathcal{F}[X(\omega)]= 2\pi x(-\omega)\end{split}\]</div>
+\mathcal{F}[X(t)]= 2\pi x(-\omega)\end{split}\]</div>
 </td>
 </tr>
 </tbody>
@@ -794,7 +802,7 @@ X(t)\end{split}\]</div>
 <section id="transformada-do-exponencial">
 <h3>Transformada do Exponencial<a class="headerlink" href="#transformada-do-exponencial" title="Link permanente para este cabeçalho">#</a></h3>
 <ul class="simple">
-<li><p>A transformada de um exponencial <span class="math notranslate nohighlight">\(x(t)=e^{j \omega_0 t}\)</span> pode ser partindo da transformada do impulso. Se</p></li>
+<li><p>A transformada de um exponencial <span class="math notranslate nohighlight">\(x(t)=e^{j \omega_0 t}\)</span> pode ser obtida partindo da transformada do impulso. Se</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\mathcal{F}[\delta(t-a)]=e^{-j a \omega}\]</div>
@@ -838,7 +846,7 @@ X(t)\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[sen(\omega_0 t)=\frac{e^{j \omega_0 t}-e^{-j \omega_0 t}}{2j}\]</div>
 <div class="math notranslate nohighlight">
-\[\mathcal{F}[sen(\omega_0 t)]=\mathcal{F}[\frac{e^{j \omega_0 t}-e^{-j \omega_0 t}}{2j}]=2 \pi\frac{\delta(\omega + \omega_0)-\delta(\omega -\omega_0)}{2j}\]</div>
+\[\mathcal{F}[sen(\omega_0 t)]=\mathcal{F}[\frac{e^{j \omega_0 t}-e^{-j =\omega_0 t}}{2j}]=2 \pi\frac{\delta(\omega - \omega_0)-\delta(\omega \omega_0)}{2j}\]</div>
 <ul class="simple">
 <li><p>Representação gráfica da transformada do seno.</p></li>
 </ul>
@@ -952,7 +960,7 @@ X(t)\end{split}\]</div>
 </figure>
 <div class="math notranslate nohighlight">
 \[\begin{split}x_f(t)=h(t)\ast x(t) \\
-X_f(j\omega)=\frac{1}{2\pi}H(j\omega)X(j\omega)\end{split}\]</div>
+X_f(omega)=H(\omega)X(\omega)\end{split}\]</div>
 <ul class="simple">
 <li><p><strong>Filtro passa-baixas ideal</strong>: Todas as frequências abaixo da frequência de corte, <span class="math notranslate nohighlight">\(w_c\)</span>, são mantidas, enquanto todas frequência acima de <span class="math notranslate nohighlight">\(w_c\)</span> são definidas como zero</p></li>
 </ul>
@@ -1014,6 +1022,15 @@ X_f(j\omega)=\frac{1}{2\pi}H(j\omega)X(j\omega)\end{split}\]</div>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="diagramaDeBode.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Resposta de Sistemas a Entradas Senoidais e Diagrama de Bode</p>
+      </div>
+    </a>
 </div></div>
   
 </div>

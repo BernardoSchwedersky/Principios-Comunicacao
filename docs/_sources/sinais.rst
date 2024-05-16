@@ -66,7 +66,7 @@ Matematicamente, o sinal impulso unitário :math:`\delta(t)` pode ser definido c
 
 	\delta(t) = \Bigg\{\begin{matrix}\infty, &t = 0 \\	0, &t \neq 0\end{matrix}
 	
-
+	
 No entanto, a função impulso unitário :math:`\delta(t)` não é uma função no sentido clássico, pois não é definida para todos os valores de t. Em vez disso, é uma distribuição generalizada, que é uma ferramenta matemática usada para descrever fenômenos como pulsos infinitamente estreitos e pontuais.
 
 O sinal impulso unitário tem propriedades únicas e importantes. Uma delas é a propriedade de integração, onde a integral do sinal impulso unitário em relação ao tempo resulta em 1. Isso é conhecido como a propriedade de área unitária. Essa propriedade é definida matematicamente como:

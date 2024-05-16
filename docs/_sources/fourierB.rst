@@ -1,6 +1,6 @@
-================
-Aula 2 - Revisão 
-================
+======================
+Revisão - Apresentação
+======================
 
 * [22000274] - Princípios de Comunicação
 * Professor: Bernardo Barancelli Schwedersky, Dr. Eng.
@@ -12,6 +12,8 @@ Agenda
 * Sinais
 * Série de Fourier
 * Transformada de Fourier
+* Diagrama de Bode
+* Filtragem
 
 Sinais
 ======
@@ -468,7 +470,7 @@ Propriedades da Transformada
 
        .. math::
           \mathcal{F}[x(t)] = X(\omega)\\
-          \mathcal{F}[X(\omega)]= 2\pi x(-\omega)
+          \mathcal{F}[X(t)]= 2\pi x(-\omega)
 
 .. revealjs-break::
 	:notitle:
@@ -593,7 +595,7 @@ Transformada do Impulso
 Transformada do Exponencial
 ---------------------------
 
-* A transformada de um exponencial :math:`x(t)=e^{j \omega_0 t}` pode ser partindo da transformada do impulso. Se
+* A transformada de um exponencial :math:`x(t)=e^{j \omega_0 t}` pode ser obtida partindo da transformada do impulso. Se
 
 .. math::
 	\mathcal{F}[\delta(t-a)]=e^{-j a \omega}
@@ -654,7 +656,7 @@ Transformada do Seno
 	sen(\omega_0 t)=\frac{e^{j \omega_0 t}-e^{-j \omega_0 t}}{2j}
 	
 .. math::
-	\mathcal{F}[sen(\omega_0 t)]=\mathcal{F}[\frac{e^{j \omega_0 t}-e^{-j \omega_0 t}}{2j}]=2 \pi\frac{\delta(\omega + \omega_0)-\delta(\omega -\omega_0)}{2j}
+	\mathcal{F}[sen(\omega_0 t)]=\mathcal{F}[\frac{e^{j \omega_0 t}-e^{-j =\omega_0 t}}{2j}]=2 \pi\frac{\delta(\omega - \omega_0)-\delta(\omega \omega_0)}{2j}
 	
 .. revealjs-break::
 	:notitle:
@@ -835,7 +837,7 @@ Filtro Ideais
 	
 .. math:: 
 		x_f(t)=h(t)\ast x(t) \\
-		X_f(j\omega)=\frac{1}{2\pi}H(j\omega)X(j\omega)
+		X_f(omega)=H(\omega)X(\omega)
 
 .. revealjs-break::
 	:notitle:

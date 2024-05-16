@@ -21,3 +21,9 @@ Conteúdo
 .. toctree::
 	listaPcom
 	listaPcom2
+	sinais
+	fourier
+	transformadaFourier
+	diagramaDeBode
+	fourierB
+	

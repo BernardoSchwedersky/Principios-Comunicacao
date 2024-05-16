@@ -151,7 +151,7 @@ Mais uma vez, o termo :math:`e^{-j\omega \cdot \infty}` é igual a zero. Portant
 Agora, somando as duas integrais, obtemos a transformada de Fourier da porta retangular:
 
 .. math::
-	\mathcal{F}[ret(t)] = \frac{1}{j\omega} e^{j\omega} - \frac{1}{j\omega} e^{-j\omega} = \frac{2}{j\omega} \sin(\omega) = sinc(\omega)
+	\mathcal{F}[ret(t)] = \frac{1}{j\omega} e^{j\omega} - \frac{1}{j\omega} e^{-j\omega} = \frac{2}{\omega} \sin(\omega) = sinc(\omega)
 
 Portanto, a transformada de Fourier da porta retangular de largura 2 é dada por:
 
