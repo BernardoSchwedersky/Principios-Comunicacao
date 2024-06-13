@@ -4,39 +4,27 @@ Lista de Exercícios 1
 
 Compilado de exercícios sugeridos para auxiliar o estudo na disciplina Princípios de Comunicação. 
 
-Exercícios do Livro
-===================
 
-Lista de exercícios selecionados do livro "Lathi, B. P., Sistemas de Comunicações Analógicos e Digitais Modernos - 4ª Edição".
+Transmissão de Sinais
+=====================
 
-3.3-6
+-----------
+Exercício 1
+-----------
 
-3.3-7
+Qual o motivo de não ser possível transmitir em banda base vários sinais em um canal compartilhado. Discuta como o processo de modulação resolve esse problema.
 
-3.3-10
+-----------
+Exercício 2
+-----------
 
-3.7-5
+A modulação consiste na multiplicação de um sinal por uma portadora senoidal. Apresente a formulação de uma portadora senoidal e obtenha a transformada de Fourier da mesma.
 
-4.3-1
+-----------
+Exercício 3
+-----------
 
-4.3-2
-
-4.3-3 
-
-4.3-4
-
-4.4-2
-
-4.5-1
-
-5.2-1
-
-5.2-2
-
-5.4-1
-
-5.4-2
-
+A multiplicação de um sinal por uma portadora senoidal é equivalente à convolução das tranformadas de Fourier dos sinais. Mostre que, quando um dos sinais é um cosseno, o resultado dessa convolução é o deslocamento da transformada de Fourier do outro sinal. 
 
 Modulação em Amplitude
 ======================
@@ -78,8 +66,36 @@ c) Calcule a potência do sinal modulado.
 Exercício 4
 -----------
 
-Para o sinal modulado em amplitude, descrito por :math:`\phi(t)=cos(5t)cos(100t)`, desenhe o diagrama de blocos do processo de demodulação síncrona, determinando os sinais envolvidos. Esboce o espectro de frequência dos sinais envolvidos nesse processo de demodulação, e discuta qual interpretação desse processo de demodulação no domínio da frequência.
+Para o sinal modulado em amplitude, descrito por :math:`\phi(t)=cos(5t)cos(1000t)`, desenhe o diagrama de blocos do processo de demodulação síncrona, determinando os sinais envolvidos. Esboce o espectro de frequência dos sinais envolvidos nesse processo de demodulação, e discuta qual interpretação desse processo de demodulação no domínio da frequência.
 
+-----------
+Exercício 5
+-----------
+
+A modulação AM-DSB-SC transmite um sinal com potência menor que a AM-DSB, o que é explicado pelo fato da modulação AM-DSB transmitir uma cópia da portadora do sinal. Se a mensagem a ser transmitida consistir em um sinal :math:`m(t)=sinc(t)`, determine:
+
+a) Quais os sinais modulados para AM-DSB-SC e AM-DSB.
+b) Qual a potência do sinal modulado em AM-DSB-SC. (Lembre-se do teorema de Parseval)
+c) Qual o fator de modulação :math:`\mu` que minimiza a potência do sinal transmitido em AM-DSB.
+d) Qual a razão entre a potência dos sinais AM-DSB e AM-DSB-SC.
+
+-----------
+Exercício 6
+-----------
+
+Duas formas para reduzir a largura de banda necessária para transmissão AM são as técnicas AM-SSB e AM-VSB. Discuta porque essas duas técnicas reduzem o tamanho do espectro necessário, e qual a diferença entre elas. 
+
+-----------
+Exercício 7
+-----------
+
+O processo de demodulação por detecção de envelope envolve três passos fundamentais: a retificação do sinal; a filtragem passa-baixas; e a retirada do valor DC do sinal. Dessa forma, desenhe uma mensagem :math:`m(t)=cos(t)` modulada em AM-DSB com fator de modulação :math:`\mu=1` e mostre graficamente cada etapa do processo de demodulação por detecção de envelope.
+
+-----------
+Exercício 8
+-----------
+
+Considerando duas estações meteorológicas que se comunicam com uma estação central de captação de dados e desejam transmitir informações compartilhando o mesmo meio físico (cabo). A tecnologia escolhida para transmissão é a modulação AM-DSB. Se o sinal da mensagem da estação 1 consistir em :math:`m_1(t)=sinc(t)` e o da mensagem da estação 2 consistir em um sinal :math:`m_1(t)=sinc(2t)`, determine qual a largura de banda necessária para transmitir cada mensagem garantindo que nenhuma informação seja perdida.
 
 Modulação em Frequência
 =======================
@@ -101,3 +117,38 @@ c) O desvio de frequência.
 d) Se o sinal transmitido é FM ou PM, e discuta.
 
 Continua ...
+
+Exercícios do Livro
+===================
+
+Lista de exercícios selecionados do livro "Lathi, B. P., Sistemas de Comunicações Analógicos e Digitais Modernos - 4ª Edição".
+
+3.3-6
+
+3.3-7
+
+3.3-10
+
+3.7-5
+
+4.2-1
+
+4.3-1
+
+4.3-2
+
+4.3-3 
+
+4.3-4
+
+4.3-8
+
+4.4-2
+
+5.2-1
+
+5.2-2
+
+5.4-1
+
+5.4-2

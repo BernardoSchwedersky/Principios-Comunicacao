@@ -134,6 +134,11 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lista de Exercícios 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="listaPcom2.html">Lista de Exercícios 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sinais.html">Sinais e Sistemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourier.html">Série de Fourier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformadaFourier.html">Transformada Fourier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagramaDeBode.html">Resposta de Sistemas a Entradas Senoidais e Diagrama de Bode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourierB.html">Revisão - Apresentação</a></li>
 </ul>
 
     </div>
@@ -280,18 +285,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-do-livro">Exercícios do Livro</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-em-amplitude">Modulação em Amplitude</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transmissao-de-sinais">Transmissão de Sinais</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1">Exercício 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3">Exercício 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-em-amplitude">Modulação em Amplitude</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercício 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-4">Exercício 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-5">Exercício 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-6">Exercício 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-7">Exercício 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-8">Exercício 8</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-em-frequencia">Modulação em Frequência</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercício 1</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-do-livro">Exercícios do Livro</a></li>
 </ul>
             </nav>
         </div>
@@ -306,28 +321,25 @@ document.write(`
   <section id="lista-de-exercicios-1">
 <h1>Lista de Exercícios 1<a class="headerlink" href="#lista-de-exercicios-1" title="Link permanente para este cabeçalho">#</a></h1>
 <p>Compilado de exercícios sugeridos para auxiliar o estudo na disciplina Princípios de Comunicação.</p>
-<section id="exercicios-do-livro">
-<h2>Exercícios do Livro<a class="headerlink" href="#exercicios-do-livro" title="Link permanente para este cabeçalho">#</a></h2>
-<p>Lista de exercícios selecionados do livro “Lathi, B. P., Sistemas de Comunicações Analógicos e Digitais Modernos - 4ª Edição”.</p>
-<p>3.3-6</p>
-<p>3.3-7</p>
-<p>3.3-10</p>
-<p>3.7-5</p>
-<p>4.3-1</p>
-<p>4.3-2</p>
-<p>4.3-3</p>
-<p>4.3-4</p>
-<p>4.4-2</p>
-<p>4.5-1</p>
-<p>5.2-1</p>
-<p>5.2-2</p>
-<p>5.4-1</p>
-<p>5.4-2</p>
+<section id="transmissao-de-sinais">
+<h2>Transmissão de Sinais<a class="headerlink" href="#transmissao-de-sinais" title="Link permanente para este cabeçalho">#</a></h2>
+<section id="exercicio-1">
+<h3>Exercício 1<a class="headerlink" href="#exercicio-1" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Qual o motivo de não ser possível transmitir em banda base vários sinais em um canal compartilhado. Discuta como o processo de modulação resolve esse problema.</p>
+</section>
+<section id="exercicio-2">
+<h3>Exercício 2<a class="headerlink" href="#exercicio-2" title="Link permanente para este cabeçalho">#</a></h3>
+<p>A modulação consiste na multiplicação de um sinal por uma portadora senoidal. Apresente a formulação de uma portadora senoidal e obtenha a transformada de Fourier da mesma.</p>
+</section>
+<section id="exercicio-3">
+<h3>Exercício 3<a class="headerlink" href="#exercicio-3" title="Link permanente para este cabeçalho">#</a></h3>
+<p>A multiplicação de um sinal por uma portadora senoidal é equivalente à convolução das tranformadas de Fourier dos sinais. Mostre que, quando um dos sinais é um cosseno, o resultado dessa convolução é o deslocamento da transformada de Fourier do outro sinal.</p>
+</section>
 </section>
 <section id="modulacao-em-amplitude">
 <h2>Modulação em Amplitude<a class="headerlink" href="#modulacao-em-amplitude" title="Link permanente para este cabeçalho">#</a></h2>
-<section id="exercicio-1">
-<h3>Exercício 1<a class="headerlink" href="#exercicio-1" title="Link permanente para este cabeçalho">#</a></h3>
+<section id="id1">
+<h3>Exercício 1<a class="headerlink" href="#id1" title="Link permanente para este cabeçalho">#</a></h3>
 <p>Considerando que se deseja transmitir 3 mensagens compartilhando o mesmo canal. Para tal, será utilizada a modulação utilizando portadoras senoidais, de forma a multiplexar as mensagens na frequência. O espectro em frequência desses sinais é apresentado na figura a seguir.</p>
 <figure class="align-center" style="width: 100%">
 <a class="reference internal image-reference" href="_images/EXPcom1.png"><img alt="_images/EXPcom1.png" src="_images/EXPcom1.png" style="width: 70%;" /></a>
@@ -338,12 +350,12 @@ document.write(`
 <li><p>Para o caso em que os 3 sinais são transmitidos utilizando AM-SSB, determine a frequência da portadora de cada um dos sinais, considerando que os sinais são transmitidos utilizando a menor largura de banda necessária. Esboce o espectro de frequência ocupado pelas mensagens.</p></li>
 </ol>
 </section>
-<section id="exercicio-2">
-<h3>Exercício 2<a class="headerlink" href="#exercicio-2" title="Link permanente para este cabeçalho">#</a></h3>
+<section id="id2">
+<h3>Exercício 2<a class="headerlink" href="#id2" title="Link permanente para este cabeçalho">#</a></h3>
 <p>Para os sinais (i) <span class="math notranslate nohighlight">\(m(t)=cos(100t)\)</span> e (ii) <span class="math notranslate nohighlight">\(m(t)= cos(200t)+ sen(150t)\)</span>, esboce o espectro das mensagens <span class="math notranslate nohighlight">\(m(t)\)</span> e o espectro das mensagens moduladas em AM-DSB-SC, modulados com portadora <span class="math notranslate nohighlight">\(cos 500 t\)</span>.</p>
 </section>
-<section id="exercicio-3">
-<h3>Exercício 3<a class="headerlink" href="#exercicio-3" title="Link permanente para este cabeçalho">#</a></h3>
+<section id="id3">
+<h3>Exercício 3<a class="headerlink" href="#id3" title="Link permanente para este cabeçalho">#</a></h3>
 <p>O sinal de mensagem <span class="math notranslate nohighlight">\(m(t)=2cos(400t)+4sen(500t)\)</span> modula um sinal de portadora <span class="math notranslate nohighlight">\(c(t)=A cos(8000t)\)</span> usando modulação AM-DSB-SC.</p>
 <ol class="loweralpha simple">
 <li><p>Determine as representações no domínio do tempo e da frequência do sinal modulado.</p></li>
@@ -353,13 +365,35 @@ document.write(`
 </section>
 <section id="exercicio-4">
 <h3>Exercício 4<a class="headerlink" href="#exercicio-4" title="Link permanente para este cabeçalho">#</a></h3>
-<p>Para o sinal modulado em amplitude, descrito por <span class="math notranslate nohighlight">\(\phi(t)=cos(5t)cos(100t)\)</span>, desenhe o diagrama de blocos do processo de demodulação síncrona, determinando os sinais envolvidos. Esboce o espectro de frequência dos sinais envolvidos nesse processo de demodulação, e discuta qual interpretação desse processo de demodulação no domínio da frequência.</p>
+<p>Para o sinal modulado em amplitude, descrito por <span class="math notranslate nohighlight">\(\phi(t)=cos(5t)cos(1000t)\)</span>, desenhe o diagrama de blocos do processo de demodulação síncrona, determinando os sinais envolvidos. Esboce o espectro de frequência dos sinais envolvidos nesse processo de demodulação, e discuta qual interpretação desse processo de demodulação no domínio da frequência.</p>
+</section>
+<section id="exercicio-5">
+<h3>Exercício 5<a class="headerlink" href="#exercicio-5" title="Link permanente para este cabeçalho">#</a></h3>
+<p>A modulação AM-DSB-SC transmite um sinal com potência menor que a AM-DSB, o que é explicado pelo fato da modulação AM-DSB transmitir uma cópia da portadora do sinal. Se a mensagem a ser transmitida consistir em um sinal <span class="math notranslate nohighlight">\(m(t)=sinc(t)\)</span>, determine:</p>
+<ol class="loweralpha simple">
+<li><p>Quais os sinais modulados para AM-DSB-SC e AM-DSB.</p></li>
+<li><p>Qual a potência do sinal modulado em AM-DSB-SC. (Lembre-se do teorema de Parseval)</p></li>
+<li><p>Qual o fator de modulação <span class="math notranslate nohighlight">\(\mu\)</span> que minimiza a potência do sinal transmitido em AM-DSB.</p></li>
+<li><p>Qual a razão entre a potência dos sinais AM-DSB e AM-DSB-SC.</p></li>
+</ol>
+</section>
+<section id="exercicio-6">
+<h3>Exercício 6<a class="headerlink" href="#exercicio-6" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Duas formas para reduzir a largura de banda necessária para transmissão AM são as técnicas AM-SSB e AM-VSB. Discuta porque essas duas técnicas reduzem o tamanho do espectro necessário, e qual a diferença entre elas.</p>
+</section>
+<section id="exercicio-7">
+<h3>Exercício 7<a class="headerlink" href="#exercicio-7" title="Link permanente para este cabeçalho">#</a></h3>
+<p>O processo de demodulação por detecção de envelope envolve três passos fundamentais: a retificação do sinal; a filtragem passa-baixas; e a retirada do valor DC do sinal. Dessa forma, desenhe uma mensagem <span class="math notranslate nohighlight">\(m(t)=cos(t)\)</span> modulada em AM-DSB com fator de modulação <span class="math notranslate nohighlight">\(\mu=1\)</span> e mostre graficamente cada etapa do processo de demodulação por detecção de envelope.</p>
+</section>
+<section id="exercicio-8">
+<h3>Exercício 8<a class="headerlink" href="#exercicio-8" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Considerando duas estações meteorológicas que se comunicam com uma estação central de captação de dados e desejam transmitir informações compartilhando o mesmo meio físico (cabo). A tecnologia escolhida para transmissão é a modulação AM-DSB. Se o sinal da mensagem da estação 1 consistir em <span class="math notranslate nohighlight">\(m_1(t)=sinc(t)\)</span> e o da mensagem da estação 2 consistir em um sinal <span class="math notranslate nohighlight">\(m_1(t)=sinc(2t)\)</span>, determine qual a largura de banda necessária para transmitir cada mensagem garantindo que nenhuma informação seja perdida.</p>
 </section>
 </section>
 <section id="modulacao-em-frequencia">
 <h2>Modulação em Frequência<a class="headerlink" href="#modulacao-em-frequencia" title="Link permanente para este cabeçalho">#</a></h2>
-<section id="id1">
-<h3>Exercício 1<a class="headerlink" href="#id1" title="Link permanente para este cabeçalho">#</a></h3>
+<section id="id4">
+<h3>Exercício 1<a class="headerlink" href="#id4" title="Link permanente para este cabeçalho">#</a></h3>
 <p>Considerando um sinal modulado em ângulo, definido pela função</p>
 <div class="math notranslate nohighlight">
 \[\phi(t)=100cos(2\pi f_c t + 4sen(2000 \pi t)),\]</div>
@@ -372,6 +406,25 @@ document.write(`
 </ol>
 <p>Continua …</p>
 </section>
+</section>
+<section id="exercicios-do-livro">
+<h2>Exercícios do Livro<a class="headerlink" href="#exercicios-do-livro" title="Link permanente para este cabeçalho">#</a></h2>
+<p>Lista de exercícios selecionados do livro “Lathi, B. P., Sistemas de Comunicações Analógicos e Digitais Modernos - 4ª Edição”.</p>
+<p>3.3-6</p>
+<p>3.3-7</p>
+<p>3.3-10</p>
+<p>3.7-5</p>
+<p>4.2-1</p>
+<p>4.3-1</p>
+<p>4.3-2</p>
+<p>4.3-3</p>
+<p>4.3-4</p>
+<p>4.3-8</p>
+<p>4.4-2</p>
+<p>5.2-1</p>
+<p>5.2-2</p>
+<p>5.4-1</p>
+<p>5.4-2</p>
 </section>
 </section>
 
@@ -423,18 +476,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-do-livro">Exercícios do Livro</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-em-amplitude">Modulação em Amplitude</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transmissao-de-sinais">Transmissão de Sinais</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-1">Exercício 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-2">Exercício 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-3">Exercício 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-em-amplitude">Modulação em Amplitude</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Exercício 3</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-4">Exercício 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-5">Exercício 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-6">Exercício 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-7">Exercício 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicio-8">Exercício 8</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-em-frequencia">Modulação em Frequência</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercício 1</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-do-livro">Exercícios do Livro</a></li>
 </ul>
   </nav></div>
 
