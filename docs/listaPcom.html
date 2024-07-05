@@ -304,6 +304,12 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-em-frequencia">Modulação em Frequência</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercício 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercício 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Exercício 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Exercício 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Exercício 7</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-do-livro">Exercícios do Livro</a></li>
@@ -404,7 +410,58 @@ document.write(`
 <li><p>O desvio de frequência.</p></li>
 <li><p>Se o sinal transmitido é FM ou PM, e discuta.</p></li>
 </ol>
-<p>Continua …</p>
+</section>
+<section id="id5">
+<h3>Exercício 2<a class="headerlink" href="#id5" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Para um sinal modulado em ângulo definido por</p>
+<div class="math notranslate nohighlight">
+\[\phi(t)=cos(\omega_c t + tu(t)),\]</div>
+<p>determine qual é a mensagem se o sinal foi modulado em (a) FM ou (b) PM.</p>
+</section>
+<section id="id6">
+<h3>Exercício 3<a class="headerlink" href="#id6" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Para a mensagem <span class="math notranslate nohighlight">\(m(t)=u(t)-u(t-5)\)</span>, encontre qual a frequência angular instantânea, a fase instantânea e esboce os sinais modulados, considerando que a mensagem foi transmitida em (a) PM e (b) FM.</p>
+</section>
+<section id="id7">
+<h3>Exercício 4<a class="headerlink" href="#id7" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Explique qual a diferença entre o processo de demodulação usando o PLL e utilizando o detector de inclinação.</p>
+</section>
+<section id="id8">
+<h3>Exercício 5<a class="headerlink" href="#id8" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Quando ao receptor superheteródino:</p>
+<ol class="loweralpha simple">
+<li><p>Discuta qual a ideia principal dele, que faz com que ele seja a alternativa comumente utilizada para recepção de sinais AM e FM;</p></li>
+<li><p>Mostre matematicamente como o misturador (mixer) é capaz de transforma um sinal com frequência próxima da frequência sintonizada, <span class="math notranslate nohighlight">\(\omega_c\)</span>, em um sinal com frequência próxima à frequência intermediária fixa, <span class="math notranslate nohighlight">\(\omega_{if}\)</span>.</p></li>
+</ol>
+</section>
+<section id="id9">
+<h3>Exercício 6<a class="headerlink" href="#id9" title="Link permanente para este cabeçalho">#</a></h3>
+<p>No Brasil, as estações de rádio FM estão espaçadas em faixas de <span class="math notranslate nohighlight">\(200\)</span> kHz. Supondo que foi recebido um sinal por um receptor superheteródino FM, apresentado na subfigura (a), e o sinal captado pela antena seja o apresentado na subfigura (b). Com base no sinal recebido, apresente graficamente qual seriam os sinais nas etapas (1), (2), (3) e (4) do processo de demodulação se o filtro passa faixas de sintonia fosse ajustado para <span class="math notranslate nohighlight">\(94.9\)</span> MHz.</p>
+<figure class="align-center" id="id11" style="width: 100%">
+<a class="reference internal image-reference" href="_images/SinalRecebido.png"><img alt="_images/SinalRecebido.png" src="_images/SinalRecebido.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>(a) Sinal Recebido</strong></span><a class="headerlink" href="#id11" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12" style="width: 100%">
+<a class="reference internal image-reference" href="_images/SuperHet.png"><img alt="_images/SuperHet.png" src="_images/SuperHet.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>(b) Receptor Superheteródino</strong></span><a class="headerlink" href="#id12" title="Link Permanente para essa imagem">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id10">
+<h3>Exercício 7<a class="headerlink" href="#id10" title="Link permanente para este cabeçalho">#</a></h3>
+<p>Para a mensagem modulada em ângulo, definida por</p>
+<div class="math notranslate nohighlight">
+\[m(t)=cos(5000t),\]</div>
+<p>obtenha:</p>
+<ol class="loweralpha simple">
+<li><p>Qual seria o sinal modulado em FM;</p></li>
+<li><p>Qual o desvio de frequência, para <span class="math notranslate nohighlight">\(k_f=10\)</span> kHz;</p></li>
+<li><p>Qual seria uma estimativa da largura de banda do sinal, utilizando a regra de Carson;</p></li>
+<li><p>Quais seriam as componentes do espectro, utilizando a tabela de funções Bessel;</p></li>
+</ol>
 </section>
 </section>
 <section id="exercicios-do-livro">
@@ -421,8 +478,10 @@ document.write(`
 <p>4.3-4</p>
 <p>4.3-8</p>
 <p>4.4-2</p>
+<p>5.1-2</p>
 <p>5.2-1</p>
 <p>5.2-2</p>
+<p>5.2-5</p>
 <p>5.4-1</p>
 <p>5.4-2</p>
 </section>
@@ -495,6 +554,12 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulacao-em-frequencia">Modulação em Frequência</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Exercício 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Exercício 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Exercício 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Exercício 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Exercício 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Exercício 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Exercício 7</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-do-livro">Exercícios do Livro</a></li>

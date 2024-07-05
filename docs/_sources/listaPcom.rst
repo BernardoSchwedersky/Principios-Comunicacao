@@ -116,7 +116,75 @@ b) O desvio de fase.
 c) O desvio de frequência.
 d) Se o sinal transmitido é FM ou PM, e discuta.
 
-Continua ...
+-----------
+Exercício 2
+-----------
+
+Para um sinal modulado em ângulo definido por
+
+.. math::
+	\phi(t)=cos(\omega_c t + tu(t)),
+
+determine qual é a mensagem se o sinal foi modulado em (a) FM ou (b) PM.
+
+-----------
+Exercício 3
+-----------
+
+Para a mensagem :math:`m(t)=u(t)-u(t-5)`, encontre qual a frequência angular instantânea, a fase instantânea e esboce os sinais modulados, considerando que a mensagem foi transmitida em (a) PM e (b) FM.
+
+-----------
+Exercício 4
+-----------
+
+Explique qual a diferença entre o processo de demodulação usando o PLL e utilizando o detector de inclinação.
+
+-----------
+Exercício 5
+-----------
+
+Quando ao receptor superheteródino:
+
+a) Discuta qual a ideia principal dele, que faz com que ele seja a alternativa comumente utilizada para recepção de sinais AM e FM;
+
+b) Mostre matematicamente como o misturador (mixer) é capaz de transforma um sinal com frequência próxima da frequência sintonizada, :math:`\omega_c`, em um sinal com frequência próxima à frequência intermediária fixa, :math:`\omega_{if}`.
+
+-----------
+Exercício 6 
+-----------
+
+No Brasil, as estações de rádio FM estão espaçadas em faixas de :math:`200` kHz. Supondo que foi recebido um sinal por um receptor superheteródino FM, apresentado na subfigura (a), e o sinal captado pela antena seja o apresentado na subfigura (b). Com base no sinal recebido, apresente graficamente qual seriam os sinais nas etapas (1), (2), (3) e (4) do processo de demodulação se o filtro passa faixas de sintonia fosse ajustado para :math:`94.9` MHz.
+
+.. figure:: /figures/SinalRecebido.png
+	:figwidth: 100%
+	:width: 50%
+	:align: center
+	
+	**(a) Sinal Recebido**
+	
+.. figure:: /figures/SuperHet.png
+	:figwidth: 100%
+	:width: 70%
+	:align: center
+	
+	**(b) Receptor Superheteródino**
+
+-----------
+Exercício 7
+-----------
+
+Para a mensagem modulada em ângulo, definida por
+
+.. math::
+	m(t)=cos(5000t),
+
+obtenha:
+
+a) Qual seria o sinal modulado em FM;
+b) Qual o desvio de frequência, para :math:`k_f=10` kHz;
+c) Qual seria uma estimativa da largura de banda do sinal, utilizando a regra de Carson;
+d) Quais seriam as componentes do espectro, utilizando a tabela de funções Bessel;
+
 
 Exercícios do Livro
 ===================
@@ -145,9 +213,13 @@ Lista de exercícios selecionados do livro "Lathi, B. P., Sistemas de Comunicaç
 
 4.4-2
 
+5.1-2
+
 5.2-1
 
 5.2-2
+
+5.2-5
 
 5.4-1
 
