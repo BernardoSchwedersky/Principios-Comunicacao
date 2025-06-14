@@ -46,7 +46,7 @@ Exercício 1
 
 Considerando que se deseja transmitir 3 mensagens compartilhando o mesmo canal. Para tal, será utilizada a modulação utilizando portadoras senoidais, de forma a multiplexar as mensagens na frequência. O espectro em frequência desses sinais é apresentado na figura a seguir.
 
-.. figure:: /figures/ExPcom1.png
+.. figure:: /figures/ExemploPcom1.png
 	:figwidth: 100%
 	:width: 70%
 	:align: center
